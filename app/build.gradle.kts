@@ -5,6 +5,9 @@ plugins {
     alias(libs.plugins.kotlinAndroid)
 }
 
+val appVersionName = "2.0.0"
+val appVersionCode = 12
+
 android {
     namespace = rootProject.ext["applicationId"].toString()
     compileSdk = 34
