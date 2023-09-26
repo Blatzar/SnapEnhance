@@ -1,2 +1,3 @@
 -dontwarn de.robv.android.xposed.**
 -keep class me.rhunk.** { *; }
+-dontwarn java.beans.**
