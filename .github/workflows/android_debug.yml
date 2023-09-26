@@ -1,6 +1,6 @@
 name: Android CI V2
 on:
-  push:
+  workflow_dispatch:
     branches: [ "refactor_2_0_0" ]
     paths-ignore:
       - '**/README.md'
