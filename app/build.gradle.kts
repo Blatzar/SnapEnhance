@@ -80,7 +80,7 @@ android {
 
     applicationVariants.all {
         outputs.map { it as BaseVariantOutputImpl }.forEach { variant ->
-            variant.outputFileName = "SnapEnhance-${versionName}-${variant.name}.apk"
+            variant.outputFileName = "SnapEnhance-${rootProject.ext["versionName"]}-${variant.name}.apk"
         }
     }
 
