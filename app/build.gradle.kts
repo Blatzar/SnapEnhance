@@ -25,6 +25,9 @@ android {
         applicationId = rootProject.ext["applicationId"].toString()
         minSdk = 28
         targetSdk = 34
+
+        versionCode = appVersionCode
+        versionName = appVersionName
         multiDexEnabled = true
     }
 
