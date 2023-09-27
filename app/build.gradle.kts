@@ -25,9 +25,6 @@ android {
         applicationId = rootProject.ext["applicationId"].toString()
         minSdk = 28
         targetSdk = 34
-
-        versionCode = appVersionCode
-        versionName = appVersionName
         multiDexEnabled = true
     }
 
@@ -81,6 +78,8 @@ android {
     applicationVariants.all {
         outputs.map { it as BaseVariantOutputImpl }.forEach { variant ->
             variant.outputFileName = "app-${rootProject.ext["appVersionName"]}-${variant.name}.apk"
+        }
+    }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
