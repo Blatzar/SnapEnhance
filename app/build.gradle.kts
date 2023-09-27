@@ -80,7 +80,7 @@ android {
 
     applicationVariants.all {
         outputs.map { it as BaseVariantOutputImpl }.forEach { variant ->
-            variant.outputFileName = "app-${rootProject.ext['appVersionName']}-${variant.name}.apk"
+            variant.outputFileName = "app-${appVersionName}-${variant.name}.apk"
     }
 
     compileOptions {
