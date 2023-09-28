@@ -5,8 +5,8 @@ plugins {
     alias(libs.plugins.kotlinAndroid)
 }
 
-val appVersionName = "2.0.0"
-val appVersionCode = 12
+//val appVersionName = "2.0.0"
+//val appVersionCode = 12
 
 android {
     namespace = rootProject.ext["applicationId"].toString()
@@ -26,8 +26,8 @@ android {
         minSdk = 28
         targetSdk = 34
 
-        versionCode = appVersionCode
-        versionName = appVersionName
+        versionCode = 12
+        versionName = "2.0.2"
         multiDexEnabled = true
     }
 
@@ -80,7 +80,7 @@ android {
 
     applicationVariants.all {
         outputs.map { it as BaseVariantOutputImpl }.forEach { variant ->
-            variant.outputFileName = "SnapEnhance-${rootProject.ext["appVersionName"]}-${variant.name}.apk"
+            variant.outputFileName = "SnapEnhance-${VersionName}-${variant.name}.apk"
         }
     }
 
