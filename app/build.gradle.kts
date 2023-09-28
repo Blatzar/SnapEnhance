@@ -26,8 +26,8 @@ android {
         minSdk = 28
         targetSdk = 34
 
-        versionCode = appVersionCode
-        versionName = appVersionName
+        versionCode = rootProject.ext.appVersionCode
+        versionName = rootProject.ext.appVersionName
         multiDexEnabled = true
     }
 
