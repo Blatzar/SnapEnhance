@@ -118,7 +118,7 @@ dependencies {
 
 tasks.register("getVersion") {
     doLast {
-        file("app/build/version.txt").appendText("""TESTVERSION""")
+        file("build/version.txt").appendText("""TESTVERSION""")
         //val versionFile = File("app/build/version.txt")
         //versionFile.writeText("TESTVERSION")
     }
