@@ -45,14 +45,14 @@ jobs:
       - name: Generate Version
         run: ./gradlew getVersion
         
-      - name: Build with Gradle
-        run: ./gradlew assembleRelease
-          
       - name: Set Environment Variables
         id: version-env
         run: | 
           echo "version=$(cat app/build/version.txt)" >> $GITHUB_ENV  
           echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+          
+      - name: Build with Gradle
+        run: ./gradlew assembleRelease 
           
       - name: Git branch name
         id: git-branch-name
