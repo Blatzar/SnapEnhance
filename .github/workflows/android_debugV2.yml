@@ -17,7 +17,6 @@ jobs:
           ref: refactor_2_0_0
           submodules: 'recursive'
     
-    
       - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:
@@ -53,7 +52,11 @@ jobs:
         run: | 
           echo "version=$(cat app/build/version.txt)" >> $GITHUB_ENV  
           echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
-          
+
+      - uses: pCYSl5EDgo/cat@master
+        id: hello
+        with:
+          path: app/build/version.txt
           
       - name: Git branch name
         id: git-branch-name
@@ -61,6 +64,6 @@ jobs:
         
       - name: Rename APK files
         run: |
-          mv app/build/outputs/apk/armv8/release/*.apk app/build/outputs/apk/armv8/release/SnapEnhance-${{ env.version }}-armv8-${{ steps.version-env.outputs.sha_short }}.apk
-          mv app/build/outputs/apk/armv7/release/*.apk app/build/outputs/apk/armv7/release/SnapEnhance-${{ env.version }}-armv7-${{ steps.version-env.outputs.sha_short }}.apk
-          echo app/build/outputs/apk/armv7/release/SnapEnhance-${{ env.version }}-armv7-${{ steps.version-env.outputs.sha_short }}.apk
+          mv app/build/outputs/apk/armv8/release/*.apk app/build/outputs/apk/armv8/release/SnapEnhance-${{ steps.hello.outputs.text }}-armv8-${{ steps.version-env.outputs.sha_short }}.apk
+          mv app/build/outputs/apk/armv7/release/*.apk app/build/outputs/apk/armv7/release/SnapEnhance-${{ steps.hello.outputs.text }}-armv7-${{ steps.version-env.outputs.sha_short }}.apk
+          echo app/build/outputs/apk/armv7/release/SnapEnhance-${{ steps.hello.outputs.text }}-armv7-${{ steps.version-env.outputs.sha_short }}.apk
