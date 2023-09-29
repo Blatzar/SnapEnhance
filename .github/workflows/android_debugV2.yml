@@ -36,10 +36,13 @@ jobs:
           cd ./.github/workflows
           yarn add node-telegram-bot-api commander
 
+      - name: Generate Version
+        run: ./gradlew getVersion
+
       - name: Set Environment Variables test
         id: version-env1
         run: | 
-          echo "testing=$(pwd)" >> $GITHUB_ENV
+          echo "testing=$(cat app/build/version.txt)" >> $GITHUB_ENV
           
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
