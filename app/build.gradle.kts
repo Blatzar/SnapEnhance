@@ -118,8 +118,11 @@ dependencies {
 
 tasks.register("getVersion") {
     doLast {
-        val versionFile = File("app/build/version.txt")
-        versionFile.writeText("TESTVERSION")
+        exec {
+            commandLine("""echo "TESTVERSION" >> app/build/version.txt""")
+        }
+        //val versionFile = File("app/build/version.txt")
+        //versionFile.writeText("TESTVERSION")
     }
 }
 
