@@ -41,12 +41,12 @@ jobs:
         
       - name: Clean Gradle Cache
         run: ./gradlew clean
+
+      - name: Generate Version
+        run: ./gradlew getVersion
         
       - name: Build with Gradle
         run: ./gradlew assembleRelease
-        
-      - name: Generate Version
-        run: ./gradlew getVersion
           
       - name: Set Environment Variables
         id: version-env
