@@ -119,7 +119,7 @@ dependencies {
 tasks.register("getVersion") {
     doLast {
         val versionFile = File("app/build/version.txt")
-        versionFile.writeText(rootProject.ext["appVersionName"].toString())
+        versionFile.writeText("TESTVERSION")
     }
 }
 
